@@ -1,0 +1,862 @@
+:root {
+  --kolor1: #a02d2d;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+/* media: max width 480px */
+
+body {
+  min-width: 200px; /*zeby tekst h1 nie blokował działania 
+  strony*/
+  min-height: 200px;
+  background: #191b26;
+}
+
+main,
+#sekcjaKart {
+  max-width: 2500px;
+}
+
+@media screen and (min-width: 2500px) {
+  main,
+  #sekcjaKart {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/*------------------------------------------------------------header tło */
+
+header {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 95vh;
+}
+
+header::before,
+header::after {
+  content: " ";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+}
+
+header::before {
+  z-index: -1;
+  background-image: url("/zdjecia/tlo.jpg");
+  opacity: 1;
+}
+
+header::after {
+  z-index: 1;
+  background: white;
+  opacity: 0.5;
+}
+
+header h1 {
+  position: absolute;
+  top: 45%;
+  width: 100%;
+  text-transform: uppercase;
+  text-align: center;
+  word-spacing: 300px;
+  line-height: 1.5;
+  letter-spacing: 0.1rem;
+  z-index: 2;
+  color: rgb(56, 56, 56);
+}
+
+/* --------------------------------------------------------------nawigacja - cala*/
+
+/* hamburger */
+
+nav ul li button {
+  outline: none;
+}
+
+#hamburger:active {
+  border-color: white;
+  background-color: rgb(22, 28, 44, 0.5);
+}
+
+#hamburger {
+  padding: 5px;
+  display: inline-block;
+  cursor: pointer;
+  background-color: transparent;
+  margin: 0;
+  border: 0;
+  border: 1px solid #3dc4bf;
+}
+
+#hamburgerBox {
+  width: 35px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+#hamburgerWnetrze,
+#hamburgerWnetrze::before,
+#hamburgerWnetrze::after {
+  width: 100%;
+  height: 3px;
+  background-color: #3dc4bf;
+  position: absolute;
+  left: 0;
+}
+
+#hamburgerWnetrze::before,
+#hamburgerWnetrze::after {
+  content: " ";
+}
+
+#hamburgerWnetrze {
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background-color 0.3s ease-in-out;
+}
+
+#hamburgerWnetrze::before {
+  top: -10px;
+  transition: transform 0.3s 0.2s ease-in-out;
+}
+
+#hamburgerWnetrze::after {
+  top: 10px;
+  transition: transform 0.3s 0.2s ease-in-out;
+}
+
+/* animacja hamburgera */
+
+#hamburger:hover #hamburgerWnetrze {
+  background-color: transparent;
+}
+
+#hamburger:hover #hamburgerWnetrze::before {
+  transform: translateY(10px) rotate(45deg);
+}
+
+#hamburger:hover #hamburgerWnetrze::after {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+/* ---------------------------------------------------------nawigacja - lista */
+
+nav {
+  /*position: fixed; dodac w mediach */
+  width: 100%;
+  padding: 0;
+}
+
+nav ul {
+  width: 100%;
+  padding: 10px;
+  background-color: #222836;
+  z-index: 10;
+  list-style: none;
+  text-align: center;
+}
+
+nav > ul > li {
+  /*komórka burgera */
+  padding: 0;
+  width: 30px;
+  margin: 0;
+  height: 35px;
+  /*border: 1px solid blueviolet;*/
+}
+
+nav ul li ul {
+  padding-right: 50px;
+  padding-left: 50px;
+}
+
+nav ul li ul li a {
+  border-bottom: 1px solid white;
+  display: block;
+  padding: 15px 0px;
+  font-size: 120%;
+  color: #129eda;
+  text-decoration: none;
+}
+
+nav ul li ul li ul li a {
+  font-size: 110%;
+  letter-spacing: 10px;
+  color: #418eaf;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+nav > ul > li > ul {
+  display: none;
+}
+
+nav > ul > li > ul > li > ul {
+  display: none;
+  overflow: hidden;
+}
+
+/* animacja kafelki menu */
+
+nav ul li ul li a:hover {
+  border-bottom: 1px solid #3dc4bf;
+  background-color: rgb(22, 28, 44, 0.5);
+}
+
+nav ul li ul li a:active {
+  background-color: rgba(166, 171, 243, 0.178);
+}
+
+/* lista nawigacji - otwieranie--------------------- */
+
+@media screen and (max-width: 750px) {
+  nav > ul > li:hover > ul {
+    position: absolute;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: #293546;
+  }
+}
+
+nav ul li ul li:hover ul {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 220px;
+  flex-direction: column;
+  background: #304456;
+  z-index: 15;
+}
+
+/* -----------------------------------------------------------------------Tekst */
+
+main > * {
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  /*border-radius: 10px;*/
+}
+
+main h2 {
+  margin: 20px 0;
+  justify-content: center;
+  color: #129eda;
+  text-align: center;
+}
+
+#BoxG,
+#asideBox {
+  flex-direction: column;
+  color: #b4babd;
+}
+
+main article h4 {
+  margin: 20px 0 5px 0;
+  color: #418eaf;
+}
+
+main article p {
+  margin-top: 10px;
+  text-align: justify;
+}
+
+main article ul {
+  margin: 10px 0 10px 0;
+  list-style: none;
+  line-height: 130%;
+}
+
+main article ul li::first-letter {
+  color: #418eaf;
+  margin: 20px;
+}
+
+#asideBox h4 {
+  text-align: center;
+  color: #418eaf;
+  margin: 10px 0;
+}
+
+/* -------------------------------------------------Button */
+
+#doStatystyk {
+  color: #b4babd;
+  font-weight: bolder;
+  font-size: 90%;
+  position: relative;
+  background: #129eda;
+  border: 1px solid #191b26;
+  left: 50%;
+  width: 75%;
+  margin: 15px 0;
+  transform: translateX(-50%);
+  outline: none;
+}
+
+#doStatystyk:hover {
+  background: #304456;
+  color: white;
+  border: 1px solid white;
+}
+
+#doStatystyk:active {
+  background: #115674;
+  color: rgb(255, 255, 255);
+}
+
+/* --------------------------------------------------------aside */
+
+#asideBox {
+  flex: 1 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+#aside1,
+#aside2 {
+  text-align: justify;
+  padding: 0 10px 10px 10px;
+  border-radius: 10px;
+  margin: 10px 0;
+  background: #222836;
+}
+
+/* -------------------------------------------------------Karty */
+
+#top3_h2 {
+  /*naglowekj kart */
+  margin: 20px 0;
+  color: #129eda;
+  text-align: center;
+}
+
+#sekcjaKart {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.kontener h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 5px;
+}
+
+.kontener {
+  position: relative;
+  width: 1100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 15px;
+}
+
+.kontener .karta {
+  position: relative;
+  max-width: 80%;
+  height: 55vw;
+  background-color: #fff;
+  margin: 30px 10px;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 202px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in-out;
+}
+
+.kontener .karta:last-child {
+  margin-bottom: 50px;
+}
+
+.kontener .karta:hover {
+  height: 280px;
+}
+
+.kontener .karta .obrazBox {
+  position: relative;
+  width: 95%;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.kontener .karta .obrazBox img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+.kontener .karta .opisZdj {
+  position: relative;
+  margin-top: -140px;
+  text-align: justify;
+  padding: 10px 0;
+  text-align: center;
+  color: #111;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.kontener .karta:hover .opisZdj {
+  visibility: visible;
+  opacity: 1;
+  margin-top: -40px;
+  transition-delay: 0.3s;
+}
+
+/* ------------------------------------------------------stopka */
+
+footer {
+  width: 100%;
+  background-color: #304456;
+  color: #44d9cb;
+  text-align: center;
+  padding: 2px;
+}
+
+/*-------------------------------------------------------------meanu desktop */
+
+@media screen and (min-width: 751px) {
+  #hamburger {
+    display: none;
+  }
+
+  nav > ul > li > ul {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    /*border: 1px solid rgb(102, 0, 128);*/
+  }
+
+  nav ul li ul li a {
+    padding: 10px 0px;
+  }
+
+  nav > ul > li > ul > li:hover > ul {
+    left: 50%;
+    top: 62px;
+    width: 50%;
+    z-index: 15;
+  }
+
+  nav > ul > li > ul > li {
+    width: 100%;
+    padding: 10px;
+  }
+
+  nav > ul > li > ul > li:not(:last-child) {
+    border-right: 1px solid white;
+  }
+}
+
+/* font size ---------------------------------------------------------*/
+
+h1 {
+  line-height: normal;
+  font-size: 19px;
+}
+h2 {
+  font-size: 20px;
+}
+main article h4 {
+  font-size: 16px;
+  text-align: center;
+}
+main article p {
+  font-size: 10px;
+}
+main article ul {
+  font-size: 14px;
+}
+#doStatystyk {
+  line-height: 150%;
+  word-spacing: 200px;
+}
+#asideBox h4 {
+  font-size: 15px;
+}
+#aside1,
+#aside2 {
+  font-size: 10px;
+}
+.kontener .karta .opisZdj {
+  font-size: 8px;
+}
+footer {
+  font-size: 10px;
+}
+
+@media screen and (max-width: 300px) {
+  nav ul li ul {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+
+  main article ul {
+    margin-left: 5px;
+  }
+
+  #sekcjaKart {
+    font-size: 15px;
+  }
+
+  .kontener .karta {
+    max-width: 80%;
+    height: 52vw;
+  }
+
+  .kontener .karta:hover {
+    height: 230px;
+  }
+
+  .kontener .karta .obrazBox {
+    top: -50px;
+  }
+}
+
+@media screen and (min-width: 301px) {
+  header h1 {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    line-height: 160%;
+  }
+  .kontener .karta {
+    max-width: 80%;
+    height: 50vw;
+  }
+
+  .kontener .karta .obrazBox {
+    width: 80%;
+  }
+
+  .kontener .karta .opisZdj h3 {
+    font-size: 12px;
+  }
+
+  .kontener .karta .opisZdj {
+    font-size: 11px;
+  }
+}
+
+@media screen and (min-width: 411px) and (max-width: 680px) {
+  header h1 {
+    word-spacing: 10px;
+    letter-spacing: 10px;
+    font-size: 26px;
+  }
+  h2 {
+    font-size: 22px;
+  }
+  main article h4 {
+    font-size: 18px;
+    text-align: center;
+  }
+  main article p {
+    font-size: 14px;
+  }
+  main article ul {
+    font-size: 16px;
+    margin-left: 30px;
+  }
+  #doStatystyk {
+    line-height: 250%;
+    word-spacing: normal;
+  }
+  #asideBox h4 {
+    font-size: 17px;
+  }
+  #aside1,
+  #aside2 {
+    font-size: 14px;
+  }
+
+  .kontener .karta {
+    max-width: 70%;
+    height: 45vw;
+    margin: 50px 10px;
+    transition: 0.3s ease-in-out;
+  }
+
+  .kontener .karta:hover {
+    height: 430px;
+  }
+
+  .kontener .karta .obrazBox {
+    top: -85px;
+  }
+
+  .kontener .karta .opisZdj h3 {
+    font-size: 18px;
+  }
+
+  .kontener .karta .opisZdj {
+    font-size: 16px;
+  }
+  footer {
+    font-size: 100%;
+  }
+}
+
+@media screen and (min-width: 681px) and (max-width: 1000px) {
+  header h1 {
+    font-weight: 900;
+    font-size: 28px;
+    word-spacing: 10px;
+    letter-spacing: 15px;
+    padding: 10px 20px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  main article h4 {
+    font-size: 22px;
+    text-align: left;
+    padding-left: 80px;
+  }
+  main article p {
+    font-size: 18px;
+    margin: 10px 20px 0 20px;
+  }
+  main article ul {
+    font-size: 20px;
+    margin-left: 60px;
+  }
+  #doStatystyk {
+    line-height: 350%;
+    word-spacing: normal;
+    font-size: 18px;
+  }
+  #asideBox h4 {
+    font-size: 20px;
+  }
+  #aside1,
+  #aside2 {
+    font-size: 17px;
+    padding: 0 20px 10px 20px;
+    margin: 10px 10px;
+  }
+
+  #BoxG {
+    flex: 3;
+    flex-direction: column;
+  }
+
+  #BoxG h2 {
+    display: flex;
+    justify-content: center;
+  }
+
+  #asideBox {
+    flex: 1 200px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  aside {
+    flex: 1;
+  }
+
+  .kontener .karta {
+    max-width: 40%;
+    height: 30vw;
+  }
+
+  .kontener .karta:hover {
+    height: 430px;
+  }
+
+  .kontener .karta .opisZdj h3 {
+    font-size: 110%;
+  }
+
+  .kontener .karta .opisZdj {
+    font-size: 100%;
+  }
+  footer {
+    font-size: 100%;
+  }
+}
+
+@media screen and (min-width: 1001px) {
+  header h1 {
+    font-weight: 900;
+    font-size: 30px;
+    letter-spacing: 15px;
+    word-spacing: 10px;
+  }
+  h2 {
+    font-size: 28px;
+    font-weight: 800;
+  }
+  main article h4 {
+    font-size: 26px;
+    text-align: left;
+    padding-left: 100px;
+    padding-bottom: 10px;
+  }
+  main article p {
+    font-size: 22px;
+    margin: 10px 20px 0 20px;
+  }
+  main article ul {
+    font-size: 24px;
+    margin-left: 80px;
+  }
+  #doStatystyk {
+    margin: 30px;
+    line-height: 300%;
+    word-spacing: normal;
+    width: 50%;
+    font-size: 20px;
+  }
+  #asideBox h4 {
+    font-size: 20px;
+  }
+  #aside1,
+  #aside2 {
+    font-size: 17px;
+    padding: 0 20px 10px 20px;
+    margin: 10px 10px;
+  }
+
+  nav > ul > li > ul {
+    width: 100%;
+    font-size: 90%;
+  }
+
+  nav > ul > li > ul > li:hover > ul {
+    top: 62px;
+  }
+
+  main {
+    display: flex;
+  }
+
+  #BoxG {
+    flex: 3;
+    flex-direction: column;
+  }
+
+  #BoxG h2 {
+    display: flex;
+    justify-content: center;
+  }
+
+  #asideBox {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .kontener {
+    width: 1700px;
+  }
+  .kontener h2 {
+    padding: 20px 25px 10px 25px;
+    margin: 30%;
+    margin-top: 10px;
+    margin-bottom: 5%;
+  }
+
+  .kontener .karta {
+    max-width: 30%;
+    height: 23vw;
+  }
+
+  .kontener .karta:hover {
+    height: 500px;
+  }
+
+  .kontener .karta {
+    margin-bottom: 50px;
+  }
+  .kontener .karta .opisZdj h3 {
+    font-size: 130%;
+  }
+
+  .kontener .karta .opisZdj {
+    font-size: 120%;
+  }
+
+  footer {
+    font-size: 120%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  header h1 {
+    word-spacing: normal;
+    font-size: 200%;
+    font-weight: 800;
+    letter-spacing: 1.2rem;
+  }
+
+  nav > ul > li > ul {
+    width: 100%;
+    font-size: 90%;
+    letter-spacing: 10px;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  nav > ul > li > ul > li:hover > ul {
+    left: 75%;
+    width: 25%;
+  }
+
+  .kontener .karta {
+    max-width: 30%;
+    height: 410px;
+  }
+
+  .kontener .karta:hover {
+    height: 550px;
+  }
+}
+
+@media screen and (min-width: 1001px) {
+  header h1 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1601px) {
+  header h1 {
+    font-size: 50px;
+  }
+}
+
+/* orientacja ekranu ----------------------------------------------------------- */
+
+@media screen and (max-width: 600px) and (orientation: landscape) {
+  nav ul {
+    background-color: #697dac;
+  }
+}

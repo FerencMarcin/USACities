@@ -1,0 +1,107 @@
+header {
+  height: 30vh;
+}
+
+header h1 {
+  top: 8vh;
+}
+
+header h1 {
+  font-size: 20px;
+}
+
+@media screen and (max-height: 410px) {
+  header h1 {
+    top: 4vh;
+    line-height: normal;
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 481px) {
+  header h1 {
+    top: 35%;
+  }
+}
+
+@media screen and (min-width: 1001px) {
+  header h1 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1601px) {
+  header h1 {
+    font-size: 40px;
+  }
+}
+
+div main {
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+div#galeria {
+  padding: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.slajd {
+  flex: 1 1 100%;
+  text-align: center;
+  border-radius: 10px;
+  background: #293546;
+  padding: 2%;
+  margin: 3% 1%;
+  max-width: 95%;
+}
+
+.slajd:hover {
+  background: #378593;
+}
+
+@media screen and (min-width: 400px) {
+  .slajd {
+    max-width: 85%;
+  }
+}
+
+@media screen and (min-width: 481px) {
+  .slajd {
+    max-width: 45%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .slajd {
+    padding: 1%;
+    margin: 1%;
+  }
+}
+
+@media screen and (min-width: 1050px) {
+  .slajd {
+    max-width: 30%;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .slajd {
+    max-width: 20%;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  .slajd {
+    max-width: 15%;
+    padding: 0.5%;
+  }
+}

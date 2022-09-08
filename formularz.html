@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <title>Miasta USA</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initialscale=1.0">
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/formularz.css" />
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li>
+                    <button id="hamburger">
+                        <span id="hamburgerBox">
+                            <span id="hamburgerWnetrze"></span>
+                        </span>
+                    </button>
+                    <ul>
+                        <li><a href="index.html">Strona główna</a></li>
+                        <li><a href="tabela.html">Statystyki</a></li>
+                        <li><a href="formularz.html">Formularz</a></li>
+                        <li>
+                            <a>Galeria</a>
+                            <ul id="podMenu">
+                                <li><a href="galeria.html">Nowy Jork</a></li>
+                                <li><a href="galeria.html">Los Angeles</a></li>
+                                <li><a href="galeria.html">Chicago</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <header>
+            <h1>Miasta Stanów Zjednoczonych</h1>
+        </header>
+        <main>
+            <section id="BoxG">
+                <h2>Formularz dodawania opinii</h2>
+                <article>
+                    <h4>Instrukcja</h4>
+                    <p>
+                        Kolor musiał pochodzić od oczu, Świecił się żenił i jakoby zlewa. I bór czernił się wkoło pali. Nawet tak się pan Podkomorzy i wszystkich lekkim witając ukłonem chciała usieść na dole. Ujrzała, zaśmiała się szczyci i stąd się lata Śród nich i, czyje były, odgadywał. Przypadkiem oczy podniósł, i pijąc obie Tadeusz przyglądał się kupiecka ale myśl żywą i narody słyną z jednej dwórórki. Wyczha! poszli, a twarz spójrzała, z oczymi podniesionymi w czasie wojny otoczony rodziną. Panny szły przed nim na tym mieczem wypędzi z ludźmi i serce mu biło nadzwyczajnie. Więc Sędzia tuż przy Bernardynie sędzia u jednej.
+                    </p>
+                </article>
+
+                <h2>Formularz</h2>
+                <div id="trescFormularza">
+                    <form action="#" method="get">
+                        <div id="fForm" >
+                            <div id="kol1">
+                                <fieldset id="personalia" >
+                                    <legend>Personalia:</legend>
+                                    <p id="imie" >
+                                        <label for="inImie">Imię * </label>
+                                        <input id="inImie" type="text" name="imie" required 
+                                        pattern="^[A-ZĄĆĘŚŃÓŁŹŻ][a-ząęśćńóżź]{1,20}(\s[A-ZĄĆĘŚŃÓŁŹŻ][a-ząęśćńóżź]{1,20})*$"
+                                        title="Imię wpisz zaczynając z dużej litery; Jeżeli chcesz wpisać dwa imiona, rozdziel je spacją" placeholder="Xy lub Xy Zy"><br />
+                                        <label for="inNazwisko">Nazwisko *</label>
+                                        <input id="inNazwisko" type="text" name="nazwisko" required pattern="^[A-ZĄĆĘŚŃÓŁŹŻ][a-ząęśćńóżź]{1,20}(-[A-ZĄĆĘŚŃÓŁŹŻ][a-ząęśćńóżź]{1,20})*$" title="Nazwisko wpisz zaczynając z dużej litery; Jeżeli chcesz wpisać więcej niż jedno nazwisko, rozdziel je myślnikiem" placeholder="Xy lub Xy-Zy"><br />
+                                    </p>
+                                    <p id="kontakt" >
+                                        <label for="inEmail">Adres e-mial *</label>
+                                        <input id="inEmail" type="email" name="email" required placeholder="xyz@ab.pl"><br />
+                                        <label for="nrTel">Numer telefonu *</label>
+                                        <input id="nrTel" type="tel" name="telefon" required 
+                                        pattern="(^[0-9]{3}-[0-9]{3}-[0-9]{3}$)|(^[4][8]-[0-9]{3}-[0-9]{3}-[0-9]{3}$)" 
+                                        title="Podaj numer w formacie: 123-456-789 lub 48-123-456-789 jeżeli chcesz podać numer kierunkowy" 
+                                        placeholder="123-456-789"><br />
+                                    </p>
+                                    <p id="data">
+                                        
+                                        <label for="inData">Data urodzenia</label>
+                                        <input id="inData" type="date" name="data"><br />
+                                    </p>
+                                </fieldset>
+                                <fieldset id="pass">
+                                    <legend>Hasło: </legend>
+                                    <p id="haslo">
+                                        
+                                        <label for="inHaslo">Hasło </label>
+                                        <input id="inHaslo" type="password" name="haslo" title="Wpisz hasło jeżeli masz już konto i chcesz z niego dodać opinię lub podaj nowe hasło jeżeli jeszcze nie masz konta i chcesz je teraz założyć" ><br />
+                                    </p>
+                                </fieldset>
+                            </div>
+                            <div id="kol2">
+                                <fieldset id="review">
+                                    <legend>Opinia: </legend>
+                                    <p id="selectMia" >
+                                        <label for="selectMiasto">Odwiedzone miasto *</label>
+                                        <select id="selectMiasto" name="miasto" required size="8" title="Wybierz przynajmniej jeden element z listy">
+                                            <option value="newyork">New York</option>
+                                            <option value="losangeles">Los Angeles</option>
+                                            <option value="chicago">Chicago</option>
+                                            <option value="huston">Huston</option>
+                                            <option value="phoenix">Phoenix</option>
+                                            <option value="filadelfia">Filadelfia</option>
+                                            <option value="sanantonia">San Antonio</option>
+                                            <option value="inne">Inne miasto</option>
+                                        </select><br />
+                                    </p>
+                                    <p id="checkCel" title="Wybierz cel wizyty w mieście - jeden z podanych">
+                                        <span>Cel wizyty w mieście: </span>
+                                        <input id="checkCel1" type="radio" name="cel" value="praca" required>
+                                        <label for="checkCel1">Praca zawodowa</label>
+                                        <input id="checkCel2" type="radio" name="cel" value="przejazdem" required>
+                                        <label for="checkCel2">Wizyta przejazdem</label>
+                                        <input id="checkCel3" type="radio" name="cel" value="rekreacja" required>
+                                        <label for="checkCel3">Wakacje i rekreacja</label>
+                                        <input id="checkCel4" type="radio" name="cel" value="inne" required>
+                                        <label for="checkCel4">Inny powód</label><br>
+                                    </p>
+                                    <p id="selectDz">
+                                        <label for="selectDzialania">Aktywności podjęte w mieście:*</label>
+                                        <select id="selectDzialania" name="zainteresowania" required multiple size="4" title="Wybierz przynajmniej jeden element z listy">
+                                            <option value="sport">Uprawianie sportu</option>
+                                            <option value="muzyka">Koncert lub teatr</option>
+                                            <option value="praca">Praca zawodowa</option>
+                                            <option value="restauracja">Wizyta w restauracji</option>
+                                            <option value="wypoczynek">Wypoczynek i reakreacja</option>
+                                            <option value="muzea">Zwiedzanie muzeów</option>
+                                            <option value="spotkanie">Spotkanie towarzyskie</option>
+                                            <option value="inne">Inne aktywności</option>
+                                        </select><br />
+                                    </p>
+                                    <p id="selectPwr">
+                                        <label for="selectPowrot">Czy zamierzasz jeszcze wrócić do tego miasta?</label>
+                                        <select id="selectPowrot" name="czyPowrot" title="Zaznacz czy zamierzasz wrócić do tego miasta" >
+                                            <option value="tak" selected>Tak</option>
+                                            <option value="nie">Nie</option>
+                                            <option value="nieWiem">Nie wiem</option>
+                                        </select><br />
+                                    </p>
+                                </fieldset>
+                                <fieldset id="regul">
+                                    <legend>Regulamin:</legend>
+                                    <input id="regulamin" type="checkbox" name="akceptacja" required title="Musisz zaakceptować regulamin"><br />
+                                    <label for="regulamin" title="Musisz zaakceptować regulamin">*Akceptuję regulamin</label>
+                                </fieldset>
+                                <div id="przyciski">
+                                    <input type="reset" value="Wyczyść">
+                                    <input type="submit" value="Rejestruj">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <div id="asideBox">
+                <aside id="aside1">
+                    <h4>Lorem ipsum dolor sit.</h4>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam esse delectus minima dolores porro temporibus nobis! Iure consequuntur laborum unde amet culpa neque dolorum distinctio delectus eligendi. Reiciendis, amet nemo.
+                    </p>
+                </aside>
+                <aside id="aside2">
+                    <h4>Lorem ipsum dolor sit.</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia consectetur autem vitae animi est harum, quasi distinctio fugit velit, aperiam a ullam asperiores repellat error commodi voluptatum esse voluptas temporibus.
+                    </p>
+                </aside>
+            </div>
+        </main>
+        <footer>&copy;MF</footer>
+    </body>
+</html>

@@ -1,0 +1,281 @@
+header {
+  height: 30vh;
+}
+
+header h1 {
+  top: 8vh;
+}
+
+header h1 {
+  font-size: 20px;
+}
+
+@media screen and (max-height: 410px) {
+  header h1 {
+    top: 4vh;
+    line-height: normal;
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 481px) {
+  header h1 {
+    top: 35%;
+  }
+}
+
+@media screen and (min-width: 1001px) {
+  header h1 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1601px) {
+  header h1 {
+    font-size: 40px;
+  }
+}
+
+#trescFormularza {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#trescFormularza p {
+  color: #cee4e7;
+  font-weight: bold;
+}
+
+#trescFormularza input {
+  width: 100%;
+}
+
+#trescFormularza fieldset {
+  border-color: transparent;
+  width: 100%;
+}
+
+#trescFormularza fieldset legend {
+  background-color: #293546;
+  width: 80%;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+#trescFormularza fieldset p input {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: white;
+  font-size: 15px;
+  line-height: 25px;
+  background-color: #345366;
+  padding: 5px 3px;
+  border: none;
+  outline: 0;
+  z-index: -1;
+  border-bottom: 2px solid white;
+  transition: 0.3s ease-in-out;
+}
+
+#trescFormularza fieldset p input::placeholder {
+  color: #3dc4c08a;
+}
+
+fieldset#personalia p label,
+fieldset#pass p label {
+  display: block;
+  transform: translateY(15px) translateX(5px);
+}
+#personalia,
+#pass,
+#review {
+  margin-bottom: 25px;
+}
+
+#trescFormularza fieldset p input:hover {
+  border-bottom-color: #00fae1;
+  background-color: #262f3e;
+}
+
+#trescFormularza fieldset p select:hover {
+  border-bottom-color: #00fae1;
+  background-color: #262f3e;
+}
+
+p#selectMia,
+p#selectDz,
+p#selectPwr {
+  margin-top: 20px;
+}
+
+p#selectMia select,
+p#selectDz select,
+p#selectPwr select {
+  text-align: center;
+  width: 100%;
+  font-size: 20px;
+  margin: 5px 0 20px 0;
+  outline: 0;
+  border: none;
+  border-bottom: 3px solid white;
+  color: white;
+  background-color: #345366;
+  transition: 0.3s ease-in-out;
+}
+
+/* p#checkCel {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+} */
+
+p#checkCel {
+  padding: 10px 2px;
+  background-color: #222836;
+}
+
+p#checkCel input {
+  display: none;
+  /* background-color: #27ae60; */
+}
+
+p#checkCel label {
+  display: block;
+  text-align: center;
+  /* background-color: #c0392b; */
+  margin-left: auto;
+  margin-right: auto;
+  left: 50%;
+  margin-bottom: 5px;
+  color: white;
+  font-size: 18px;
+  padding: 5px;
+  border: 2px solid transparent;
+  transition: 0.2s ease-in-out;
+}
+
+p#checkCel input:hover + label {
+  color: #44d9cb;
+}
+
+p#checkCel input:checked + label {
+  color: #44d9cb;
+  background-color: #304456;
+  border-color: #262f3e;
+}
+
+p#ocena textarea {
+  background: #3863766b;
+  color: #cee4e7;
+  width: 100%;
+}
+
+fieldset#regul label {
+  color: white;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  border-bottom: 3px solid transparent;
+  left: 50%;
+  padding-bottom: 5px;
+}
+
+fieldset#regul label:hover {
+  color: #27ae60;
+  border-color: #44d9cb;
+}
+
+input[type="submit"] {
+  width: 100%;
+  font-size: 20px;
+  font-weight: bolder;
+  padding: 10px;
+  border: 2px solid #27ae60;
+  border-radius: 15px;
+  background: rgba(46, 204, 113, 0.7);
+  margin-top: 5px;
+}
+
+input[type="reset"] {
+  width: 100%;
+  font-size: 20px;
+  font-weight: bolder;
+  padding: 10px;
+  border: 2px solid #c0392b;
+  border-radius: 15px;
+  background: rgba(231, 76, 60, 0.9);
+  margin-top: 5px;
+}
+
+input[type="submit"]:hover {
+  background: #27ae60;
+}
+
+input[type="reset"]:hover {
+  background: #c0392b;
+}
+
+div#przyciski {
+  margin-top: 15px;
+}
+
+@media screen and (min-width: 700px) {
+  #trescFormularza {
+    font-size: 22px;
+  }
+
+  #trescFormularza fieldset {
+    border-color: #cee4e7;
+    padding: 20px;
+    background-color: rgb(30, 33, 49);
+  }
+
+  div#przyciski {
+    display: flex;
+  }
+
+  input[type="submit"],
+  input[type="reset"] {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  #trescFormularza {
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  #trescFormularza {
+    display: block;
+    margin: 100px 20px;
+  }
+
+  #fForm {
+    display: flex;
+  }
+
+  #kol1,
+  #kol2 {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin: 5px;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  #kol1 {
+    width: 1000px;
+  }
+  #trescFormularza {
+    flex-basis: 200px;
+    display: block;
+    width: 1500px;
+    margin: auto;
+  }
+}
